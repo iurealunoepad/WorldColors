@@ -24,7 +24,7 @@ if (!$stmt_pais) {
 $stmt_pais->execute();
 $pais = $stmt_pais->get_result();
 
-
+if (!$pais) { die("") }
 
 $levels = [
     1 => "facil",
