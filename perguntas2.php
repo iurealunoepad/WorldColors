@@ -14,7 +14,18 @@
 
 <?php
 
-$sql_level = "SELECT * FROM niveis";
+$sql_pais = "SELECT * FROM categorias";
+$stmt_pais = $conexao->prepare($sql_pais);
+
+if (!$stmt_pais) {
+    die("Erro ao preparar a consulta da base de dados.");
+}
+
+$stmt_pais->execute();
+$pais = $stmt_pais->get_result();
+
+
+
 $levels = [
     1 => "facil",
     2 => "medio",
